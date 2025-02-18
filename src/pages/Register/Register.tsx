@@ -9,6 +9,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -72,23 +73,26 @@ export default function Register({}: Props) {
       >
         <TabsList className="flex justify-between w-full h-14 mx-auto">
           <TabsTrigger
+            disabled
             id="userRegister"
             value="userRegisterTab"
-            className="h-10 w-10 rounded-full shadow-blue-300 shadow-md"
+            className="h-10 w-10 rounded-full shadow-blue-300 shadow-md text-gray-900"
           >
             1
           </TabsTrigger>
           <TabsTrigger
+            disabled
             id="restaurantRegister"
             value="restaurantRegisterTab"
-            className="h-10 w-10 rounded-full shadow-blue-300 shadow-md"
+            className="h-10 w-10 rounded-full shadow-blue-300 shadow-md text-gray-900"
           >
             2
           </TabsTrigger>
           <TabsTrigger
+            disabled
             id="payment"
             value="paymentTab"
-            className="h-10 w-10 rounded-full shadow-blue-300 shadow-md"
+            className="h-10 w-10 rounded-full shadow-blue-300 shadow-md text-gray-900"
           >
             3
           </TabsTrigger>
@@ -226,107 +230,30 @@ export default function Register({}: Props) {
             <CardContent className="space-y-2">
               <form onSubmit={() => {}}>
                 <div className="space-y-1">
-                  <Label htmlFor="fullname">Nome completo</Label>
+                  <Label htmlFor="fullname">CPNJ</Label>
                   <Input
                     id="fullname"
                     defaultValue=""
-                    placeholder="João Mateus Silva"
+                    placeholder="12.345.678/0001-00"
                     required
                   />
+
+                  <div className="space-x-2">
+                    <Checkbox id="informal_terms" />
+                    <Label htmlFor="informal_terms">
+                      Sou um empreendedor sem informal
+                    </Label>
+                  </div>
                 </div>
                 <div className="space-y-1">
-                  <Label htmlFor="email">E-mail</Label>
+                  <Label htmlFor="email">Nome do estabelecimento</Label>
                   <Input
-                    id="email"
-                    placeholder="JoaoMateus@examplo.com"
+                    id="text"
+                    placeholder="Restaurante do seu João"
                     required
-                  />
-                </div>
-                <div className="space-y-1">
-                  <Label htmlFor="cpf">CPF</Label>
-                  <Input id="cpf" placeholder="123.456.789-00" required />
-                </div>
-                <div className="space-y-1">
-                  <Label htmlFor="phonenumber">Número de telefone</Label>
-                  <Input
-                    id="phonenumber"
-                    placeholder="(99) 99999-9999"
-                    required
-                    type="tel"
                   />
                 </div>
 
-                <div className="space-y-1">
-                  <label
-                    htmlFor="password"
-                    className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                  >
-                    Senha
-                  </label>
-                  <p
-                    className={`text-xs ${
-                      passwordStrength === "Fraca"
-                        ? "text-red-500"
-                        : passwordStrength === "Média"
-                        ? "text-yellow-500"
-                        : passwordStrength === "Forte"
-                        ? "text-green-500"
-                        : "hidden"
-                    }`}
-                  >
-                    {passwordStrength !== "no-content" && passwordStrength}
-                  </p>
-                  <div className="relative">
-                    <Input
-                      id="password"
-                      type={showPassword ? "text" : "password"}
-                      placeholder="********"
-                      required
-                      value={password}
-                      onChange={(e) => setPassword(e.target.value)}
-                    />
-                    <button
-                      type="button"
-                      onClick={() => setShowPassword((prev) => !prev)}
-                      className="absolute inset-y-0 right-2 flex items-center text-gray-500"
-                    >
-                      {showPassword ? <EyeSlash /> : <Eye />}
-                    </button>
-                  </div>
-                </div>
-                <div className="space-y-1">
-                  <Label htmlFor="passwordagain">Repita sua senha</Label>
-                  <p
-                    className={`text-xs ${
-                      passwordMatch === "no-content"
-                        ? "hidden"
-                        : passwordMatch === "match"
-                        ? "text-green-500"
-                        : "text-red-500"
-                    }`}
-                  >
-                    {passwordMatch === "match"
-                      ? "As senhas coincidem"
-                      : "As senhas não coincidem"}
-                  </p>
-                  <div className="relative">
-                    <Input
-                      id="passwordagain"
-                      type={showPassword ? "text" : "password"}
-                      placeholder="********"
-                      required
-                      value={passwordAgain}
-                      onChange={(e) => setPasswordAgain(e.target.value)}
-                    />
-                    <button
-                      type="button"
-                      onClick={() => setShowPassword((prev) => !prev)}
-                      className="absolute inset-y-0 right-2 flex items-center text-gray-500"
-                    >
-                      {showPassword ? <EyeSlash /> : <Eye />}
-                    </button>
-                  </div>
-                </div>
                 <button
                   type="submit"
                   className="hidden"
