@@ -65,7 +65,7 @@ export default function Register({}: Props) {
   }, [password, passwordAgain]);
 
   return (
-    <div className="bg-red-200 w-full h-screen flex justify-center items-center">
+    <div className="bg-red-200 w-full h-screen flex justify-center pt-32 md:pt-60">
       <Tabs
         value={activeTab}
         onValueChange={setActiveTab}
@@ -240,9 +240,7 @@ export default function Register({}: Props) {
 
                   <div className="space-x-2">
                     <Checkbox id="informal_terms" />
-                    <Label htmlFor="informal_terms">
-                      Sou um empreendedor sem informal
-                    </Label>
+                    <Label htmlFor="informal_terms">Não possuo CNPJ</Label>
                   </div>
                 </div>
                 <div className="space-y-1">
