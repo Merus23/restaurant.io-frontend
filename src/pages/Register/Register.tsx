@@ -63,7 +63,7 @@ export default function Register({}: Props) {
   }, [password, passwordAgain]);
 
   return (
-    <div className="bg-red-200 w-full h-screen flex justify-center pt-32 md:pt-60">
+    <div className="bg-red-200 w-full h-screen flex justify-center pt-24 md:pt-60">
       <Tabs
         value={activeTab}
         onValueChange={setActiveTab}
@@ -238,7 +238,9 @@ export default function Register({}: Props) {
 
                   <div className="space-x-2">
                     <Checkbox id="informal_terms" />
-                    <Label htmlFor="informal_terms">Não possuo CNPJ</Label>
+                    <Label htmlFor="informal_terms">
+                      Sou um empreendedor informal
+                    </Label>
                   </div>
                 </div>
                 <div className="space-y-1">
@@ -266,7 +268,24 @@ export default function Register({}: Props) {
         </TabsContent>
         <TabsContent value="paymentTab">
           <Card>
-            <h1>Qualquer coisa 13</h1>
+            <CardHeader>
+              <CardTitle>Pagamento</CardTitle>
+              <CardDescription>
+                Você será redirecionado para uma página de pagamento
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="flex flex-col gap-6">
+                <h1 className="mx-auto text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+                  Caso não tenha sido redirecionado para o pagamento, clique o
+                  botão a baixo:
+                </h1>
+                <a className="mx-auto text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">
+                  <Button>Pagamento</Button>
+                </a>
+              </div>
+            </CardContent>
+            <CardFooter></CardFooter>
           </Card>
         </TabsContent>
       </Tabs>
