@@ -35,11 +35,9 @@ export default function Register({}: Props) {
   const [activeTab, setActiveTab] = useState("userRegisterTab");
 
   const handleNextStep = () => {
-    if (activeTab === "userRegisterTab") {
-      setActiveTab("restaurantRegisterTab");
-    } else if (activeTab === "restaurantRegisterTab") {
-      setActiveTab("paymentTab");
-    }
+    if (activeTab === "userRegisterTab") setActiveTab("restaurantRegisterTab");
+
+    if (activeTab === "restaurantRegisterTab") setActiveTab("paymentTab");
   };
 
   useEffect(() => {

@@ -795,11 +795,6 @@ body {
   background-color: transparent;
 }
 
-.bg-pink-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(251 207 232 / var(--tw-bg-opacity, 1));
-}
-
 .p-1 {
   padding: 0.25rem;
 }
@@ -835,14 +830,6 @@ body {
 
 .pt-0 {
   padding-top: 0px;
-}
-
-.pt-60 {
-  padding-top: 15rem;
-}
-
-.pt-20 {
-  padding-top: 5rem;
 }
 
 .pt-32 {
