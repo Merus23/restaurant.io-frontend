@@ -21,7 +21,7 @@ export default function Register({}: Props) {
   ];
 
   return (
-    <div className="bg-red-200 w-full h-screen flex justify-center pt-24 md:pt-60">
+    <div className="bg-red-200 w-full h-full flex justify-center pt-24 md:pt-60 p-4 md:p-0">
       <Tabs
         value={activeTab}
         onValueChange={setActiveTab}
