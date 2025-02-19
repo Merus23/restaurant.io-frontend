@@ -48,7 +48,9 @@ export default function Navbar({}: Props) {
             src="https://github.com/shadcn.png"
             alt="@shadcn"
           />
-          <AvatarFallback>CN</AvatarFallback>
+          <AvatarFallback className="rounded-full border-4 border-black w-12 h-12">
+            CN
+          </AvatarFallback>
         </Avatar>
       </div>
 
