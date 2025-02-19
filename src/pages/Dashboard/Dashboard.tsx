@@ -15,7 +15,7 @@ export default function Dashboard({}: Props) {
   ];
 
   return (
-    <div className="bg-red-200 w-full h-screen flex flex-col justify-center items-center p-4 md:p-0">
+    <div className="bg-red-200 w-full h-full flex flex-col justify-center items-center p-4 md:p-0">
       <div className="hidden">
         <p>Segunda-feira, 22 de Janeiro</p>
         <p>Boa tarde, João!</p>
